@@ -6,14 +6,14 @@
 /*   By: akovalch <akovalch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 17:44:03 by akovalch          #+#    #+#             */
-/*   Updated: 2024/11/20 16:40:59 by akovalch         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:22:35 by akovalch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
 
-int	check_format(va_list args, const char *format)
+static int	check_format(va_list args, const char *format)
 {
 	int	count_len;
 
@@ -25,9 +25,9 @@ int	check_format(va_list args, const char *format)
 	else if (*format == 'd' || *format == 'i')
 		count_len += ft_putnbr(va_arg(args, int));
 	else if (*format == 'p')
-		count_len += ft_print_pointer(va_arg(args, void *));
+		count_len += ft_putpointer(va_arg(args, void *));
 	else if (*format == 'u')
-		count_len += ft_print_unsigned(va_arg(args, unsigned int));
+		count_len += ft_putunsigned(va_arg(args, unsigned int));
 	else if (*format == 'x')
 		count_len += ft_puthex(va_arg(args, unsigned int), 0);
 	else if (*format == 'X')

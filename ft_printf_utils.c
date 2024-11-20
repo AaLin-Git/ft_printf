@@ -6,7 +6,7 @@
 /*   By: akovalch <akovalch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 13:44:14 by akovalch          #+#    #+#             */
-/*   Updated: 2024/11/20 16:42:27 by akovalch         ###   ########.fr       */
+/*   Updated: 2024/11/20 17:22:19 by akovalch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_puthex(uintptr_t num, int upper)
 	return (len);
 }
 
-int	ft_print_pointer(void *ptr)
+int	ft_putpointer(void *ptr)
 {
 	int	len;
 
@@ -53,7 +53,7 @@ int	ft_print_pointer(void *ptr)
 	return (len);
 }
 
-int	ft_print_unsigned(unsigned int num)
+int	ft_putunsigned(unsigned int num)
 {
 	int		len;
 	int		i;
