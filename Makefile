@@ -1,6 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
+
 NAME = libftprintf.a
 SUBDIR = Libft
 
@@ -9,24 +10,23 @@ OBJ = $(SRC:.c=.o)
 LIBFT = $(SUBDIR)/libft.a
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(LIBFT) $(NAME)
 
 $(LIBFT):
-	$(MAKE) -C $(SUBDIR)
+	@$(MAKE) -C $(SUBDIR)
 
 $(NAME): $(OBJ) $(LIBFT)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJ)
+	@cp $(LIBFT) $(NAME)
+	@ar rcs $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJ)
-	$(MAKE) -C $(SUBDIR) clean
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
-	$(MAKE) -C $(SUBDIR) fclean
+	@$(MAKE) -C $(SUBDIR) fclean
+	@$(RM) $(NAME)
 
 re: fclean all
 
